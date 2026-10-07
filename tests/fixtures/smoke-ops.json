@@ -1,0 +1,16 @@
+{
+  "note": "smoke test: one context fact, one experience root with a delta, one trap",
+  "operations": [
+    {"op": "ADD_ROOT", "file": "context/tech-stack.md", "section": "Commands", "ref": "cmd",
+     "content": "Run the unit tests with python3 -m unittest discover -s tests from the repository root",
+     "labels": ["testing"], "source": "Makefile"},
+    {"op": "ADD_ROOT", "file": "experience/deploy.md", "section": "Lessons", "ref": "mig",
+     "content": "Run database migrations before deploying the web app to avoid schema drift errors",
+     "labels": ["deploy", "migrations"]},
+    {"op": "ADD_DELTA", "parent": "@mig", "when": "preview deployments",
+     "content": "point migrations at the branch database created for the preview, not main"},
+    {"op": "ADD_ROOT", "file": "experience/deploy.md", "section": "Traps", "kind": "trap",
+     "content": "FAILED: deploying before migrating left the app querying missing columns. INSTEAD: migrate first, then deploy.",
+     "labels": ["deploy"]}
+  ]
+}
