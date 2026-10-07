@@ -42,5 +42,5 @@ For the skill's maintainer, not loaded during normal use. Maps each design rule 
 ## Known gaps / upgrade paths
 - **Retrieval** is keyword-based. DeltaMem and ReasoningBank use embeddings. Swap `scripts/lib/search.py` (`search`, `similarity`) for an embedding backend; keep the signatures.
 - **Storage** is markdown files. `scripts/lib/store.py` is the seam for SQLite or a hosted memory service; `ops-log.jsonl` can be replayed to migrate.
-- **Evaluation**: no benchmark was run. MemoryAgentBench's four competencies are a good template for project-level evals (see evals/).
+- **Evaluation**: no benchmark was run. MemoryAgentBench's four competencies are a good template for project-level evals (see tests/evals.json in the memory-bank-skill repo).
 - **Success signal** is the agent's own feedback tags, which can be inflated. Tying `helpful` to test results would make promotion more trustworthy.

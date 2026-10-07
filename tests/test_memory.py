@@ -1,4 +1,4 @@
-"""Unit tests for scripts/. Run: python3 -m unittest evals/test_memory.py  (from the skill root)."""
+"""Unit tests for the skill's scripts/. Run: python3 -m unittest discover -s tests  (from the repo root)."""
 import io
 import json
 import os
@@ -9,7 +9,7 @@ import unittest
 from contextlib import redirect_stdout
 from pathlib import Path
 
-SKILL = Path(__file__).resolve().parents[1]
+SKILL = Path(__file__).resolve().parents[1] / "skill" / "memory-bank"
 sys.path.insert(0, str(SKILL / "scripts"))
 import memory  # noqa: E402
 from lib.store import FileStore  # noqa: E402
