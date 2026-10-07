@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "counters": {
+    "brief": 5,
+    "stack": 8,
+    "arch": 6,
+    "conv": 4,
+    "dec": 2,
+    "prog": 5
+  },
+  "reminded_sessions": [],
+  "created": "2026-10-07",
+  "batches": 1
+}
