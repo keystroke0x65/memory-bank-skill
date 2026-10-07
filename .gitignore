@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+*.egg-info/
+
+# Build output (make package)
+dist/
+
+# OS
+.DS_Store
+
+# Rollback snapshots written by memory.py apply — matches the .gitignore that
+# memory.py init writes inside every bank, at any depth.
+**/memory-bank/.snapshots/
