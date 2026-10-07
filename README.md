@@ -75,6 +75,17 @@ You can also run `scripts/install.sh [--project <path>] [--uninstall]`
 directly. The script is idempotent. It refuses to replace a real directory or
 a symlink that points somewhere else.
 
+To install a plain copy instead of a symlink, copy `skill/memory-bank/` (the
+folder that contains `SKILL.md`), not the repo-root `memory-bank/`, which is
+this project's own memory data:
+
+```sh
+cp -r skill/memory-bank ~/.claude/skills/                  # all projects
+cp -r skill/memory-bank /path/to/project/.claude/skills/   # one project (create .claude/skills/ first)
+```
+
+A copy doesn't update itself: after the skill changes, copy it again.
+
 To share the skill without the repo, run `make package`. It writes
 `dist/memory-bank-<version>.zip`, with `memory-bank/` as the top-level folder.
 
